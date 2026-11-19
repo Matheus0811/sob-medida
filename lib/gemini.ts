@@ -22,7 +22,8 @@ export class AnalysisError extends Error {
   }
 }
 
-export const DEFAULT_MODELS = ['gemini-3.8-flash', 'gemini-3.5-flash-lite'];
+// O Flash-Lite vem primeiro: responde em poucos segundos e tem a maior cota grátis (cerca de 500 por dia).
+export const DEFAULT_MODELS = ['gemini-3.5-flash-lite', 'gemini-3.8-flash'];
 
 /** Lê a lista de modelos de GEMINI_MODELS ("modelo-a,modelo-b"); sem ela, usa os padrões. */
 export function modelsFromEnv(value = process.env.GEMINI_MODELS): string[] {
@@ -44,7 +45,7 @@ export interface GenerateRequest {
 export type Generate = (request: GenerateRequest) => Promise<string | undefined>;
 
 /** Tempo máximo de espera por modelo. Sem isso, uma resposta travada deixaria a análise presa. */
-export const MODEL_TIMEOUT_MS = 45_000;
+export const MODEL_TIMEOUT_MS = 25_000;
 
 function geminiGenerate(apiKey: string): Generate {
   const ai = new GoogleGenAI({ apiKey, httpOptions: { timeout: MODEL_TIMEOUT_MS } });

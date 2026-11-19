@@ -81,7 +81,7 @@ O site abre em http://localhost:3000. No Windows, dá para usar o `INICIAR.bat`,
 | Nome | Para que serve |
 | --- | --- |
 | `GEMINI_API_KEY` | Chave da API do Google Gemini (obrigatória). |
-| `GEMINI_MODELS` | Modelos tentados em ordem, separados por vírgula. Padrão: `gemini-3.8-flash,gemini-3.5-flash-lite`. |
+| `GEMINI_MODELS` | Modelos tentados em ordem, separados por vírgula. Padrão: `gemini-3.5-flash-lite,gemini-3.8-flash` (o mais rápido e com maior cota grátis primeiro). |
 
 ## Testes
 

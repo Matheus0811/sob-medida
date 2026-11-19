@@ -85,8 +85,8 @@ export function Analyzer() {
     setError(null);
     setStatus('loading');
     try {
-      // O servidor tenta até dois modelos de 45 s cada; passou disso, algo travou no caminho.
-      const response = await fetch('/api/analisar', { method: 'POST', body, signal: AbortSignal.timeout(110_000) });
+      // O servidor tenta até dois modelos de 25 s cada; passou disso, algo travou no caminho.
+      const response = await fetch('/api/analisar', { method: 'POST', body, signal: AbortSignal.timeout(70_000) });
       const data = (await response.json().catch(() => null)) as
         | { analysis?: Analysis; model?: string; error?: ApiError }
         | null;

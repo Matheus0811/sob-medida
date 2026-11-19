@@ -14,7 +14,7 @@ function apiError(status: number, message = 'erro') {
 describe('chamada à IA', () => {
   it('lê a lista de modelos da variável de ambiente', () => {
     expect(modelsFromEnv('modelo-a, modelo-b ,')).toEqual(['modelo-a', 'modelo-b']);
-    expect(modelsFromEnv('')).toEqual(['gemini-3.8-flash', 'gemini-3.5-flash-lite']);
+    expect(modelsFromEnv('')).toEqual(['gemini-3.5-flash-lite', 'gemini-3.8-flash']);
   });
 
   it('devolve a análise e o modelo usado', async () => {
