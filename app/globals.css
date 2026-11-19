@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+/* Fontes carregadas pelo next/font em app/layout.tsx */
+@theme inline {
+  --font-sans: var(--font-sans-var), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif-var), ui-serif, Georgia, serif;
+}
+
+/* Paleta: papel frio, tinta azul-escura e o amarelo de marca-texto que destaca o que combina. */
+@theme {
+  --color-papel: #eef1f4;
+  --color-folha: #ffffff;
+  --color-tinta: #0e1a2b;
+  --color-grafite: #536071;
+  --color-linha: #d2d8e0;
+  --color-marca: #ffe14d;
+  --color-azul: #2348c9;
+  --color-azul-escuro: #1a3699;
+  --color-verde: #17734a;
+  --color-lacuna: #a8233d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-papel);
+  color: var(--color-tinta);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-azul);
+  outline-offset: 2px;
+}
+
+/* Marca-texto: faixa amarela atrás do texto, como em um currículo revisado à mão. */
+.marca-texto {
+  background-image: linear-gradient(
+    transparent 52%,
+    var(--color-marca) 52%,
+    var(--color-marca) 90%,
+    transparent 90%
+  );
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+@keyframes passar-marca {
+  from {
+    background-size: 0% 100%;
+  }
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+/* A nota ganha o marca-texto passando da esquerda para a direita (o único movimento automático da página). */
+.marca-animada {
+  background-repeat: no-repeat;
+  animation: passar-marca 700ms ease-out 150ms both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marca-animada {
+    animation: none;
+  }
+}
