@@ -24,6 +24,15 @@ describe('formato da análise', () => {
     expect(analysis!.palavrasChave.presentes).toEqual(['React', 'Git']);
   });
 
+  it('tira marcadores de lista das sugestões', () => {
+    const raw = {
+      ...EXAMPLE_ANALYSIS,
+      sugestoes: [{ secao: 'Experiência', antes: '- Fiz sites.', depois: '• Desenvolvi [N] sites.', motivo: 'x' }],
+    };
+    const analysis = parseAnalysis(JSON.stringify(raw));
+    expect(analysis!.sugestoes[0]).toMatchObject({ antes: 'Fiz sites.', depois: 'Desenvolvi [N] sites.' });
+  });
+
   it('recusa texto que não é JSON ou JSON fora do formato', () => {
     expect(parseAnalysis(undefined)).toBeNull();
     expect(parseAnalysis('isto não é json')).toBeNull();

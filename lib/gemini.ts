@@ -56,7 +56,7 @@ function geminiGenerate(apiKey: string): Generate {
         systemInstruction: SYSTEM_PROMPT,
         responseMimeType: 'application/json',
         responseJsonSchema: analysisJsonSchema(),
-        temperature: 0.3,
+        temperature: 0.2,
       },
     });
     return response.text;

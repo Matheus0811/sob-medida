@@ -44,6 +44,8 @@ export type Analysis = z.infer<typeof analysisSchema>;
 export { MATCH_LABELS, matchLevel, type MatchLevel } from './match';
 
 const clean = (text: string) => text.trim();
+/** Tira marcadores de lista do começo ("- ", "• ", "* ") que a IA às vezes copia do currículo. */
+const stripBullet = (text: string) => text.trim().replace(/^[-•*]\s+/, '');
 const uniqueTerms = (terms: string[]) => {
   const seen = new Set<string>();
   return terms
@@ -73,7 +75,10 @@ export function normalizeAnalysis(raw: Analysis): Analysis {
       presentes: uniqueTerms(raw.palavrasChave.presentes),
       ausentes: uniqueTerms(raw.palavrasChave.ausentes),
     },
-    sugestoes: raw.sugestoes.filter((item) => item.depois.trim()).slice(0, 5),
+    sugestoes: raw.sugestoes
+      .map((item) => ({ ...item, antes: stripBullet(item.antes), depois: stripBullet(item.depois) }))
+      .filter((item) => item.depois)
+      .slice(0, 5),
     carta: raw.carta.trim(),
   };
 }
