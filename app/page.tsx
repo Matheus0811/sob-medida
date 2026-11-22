@@ -61,7 +61,7 @@ export default function Home() {
           <p>
             Feito por{' '}
             <a
-              href="https://www.linkedin.com/in/matheus-galv%C3%A3o-460612292"
+              href="https://www.linkedin.com/in/matheus-galvao"
               className="font-medium text-tinta underline-offset-4 hover:underline"
               target="_blank"
               rel="noreferrer"
