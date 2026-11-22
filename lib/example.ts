@@ -56,7 +56,7 @@ export const EXAMPLE_ANALYSIS: Analysis = {
   empresa: 'Lumina Tecnologia',
   nota: 64,
   resumo:
-    'Seu perfil tem a base certa para a vaga: React em um estágio real, HTML e CSS fortes e contato com o time de design. O que mais pesa contra é não ter TypeScript, um requisito obrigatório, e o currículo não mostrar o consumo de APIs que você já fez no projeto Clima Agora.',
+    'Seu perfil tem a base certa para a vaga: React em um estágio real, experiência com HTML e CSS e contato com o time de design. O que mais pesa contra é não ter TypeScript, um requisito obrigatório, e o currículo não mostrar o consumo de APIs que você já fez no projeto Clima Agora.',
   pontosFortes: [
     {
       titulo: 'React em um projeto real',
@@ -68,7 +68,7 @@ export const EXAMPLE_ANALYSIS: Analysis = {
     },
     {
       titulo: 'Trabalho junto com design',
-      detalhe: 'As reuniões com o time de design e o uso do Figma mostram que você já sabe transformar protótipos em telas.',
+      detalhe: 'As reuniões com o time de design para entender os protótipos no Figma mostram que você já trabalha perto de quem desenha as telas.',
     },
     {
       titulo: 'Git no dia a dia',
@@ -108,39 +108,38 @@ export const EXAMPLE_ANALYSIS: Analysis = {
       secao: 'Experiência',
       antes: 'Ajudei a migrar o site institucional da agência para React.',
       depois:
-        'Migrei [N] páginas do site institucional da agência para React, criando componentes reutilizados em [N] telas.',
-      motivo: 'Mostra o tamanho da sua contribuição em React com números que você pode preencher.',
+        'Contribuí para a migração do site institucional da agência para React, cuidando de [páginas ou componentes que você migrou].',
+      motivo: 'Mantém o seu papel real e mostra o tamanho da sua parte em React, a principal tecnologia da vaga.',
     },
     {
       secao: 'Projetos',
       antes: 'Clima Agora: página que mostra a previsão do tempo usando a API pública do OpenWeather.',
-      depois:
-        'Clima Agora: consumo de API REST (OpenWeather) com tratamento de erros e estados de carregamento, em JavaScript.',
+      depois: 'Clima Agora: página de previsão do tempo com consumo de API REST pública (OpenWeather).',
       motivo: 'Usa o termo exato da vaga para uma experiência que você já tem.',
     },
     {
       secao: 'Experiência',
       antes: 'Corrigi problemas de layout em celulares e tablets.',
-      depois:
-        'Corrigi problemas de layout responsivo em celulares e tablets, reduzindo em [X%] as reclamações de clientes sobre a versão mobile.',
-      motivo: 'Transforma uma tarefa em resultado, que é o que recrutadores procuram.',
+      depois: 'Corrigi problemas de layout responsivo em celulares e tablets em [N] páginas.',
+      motivo: '"Responsivo" é o termo que recrutadores buscam, e o número mostra o volume do seu trabalho.',
     },
     {
       secao: 'Habilidades',
-      antes: '',
-      depois: 'TypeScript (em estudo, aplicado no projeto Lista de tarefas)',
-      motivo: 'Depois de converter o projeto, deixa claro que você já começou a usar o requisito principal.',
+      antes: 'HTML, CSS, Sass, JavaScript, React, Git e GitHub, Figma (básico), inglês intermediário',
+      depois:
+        'HTML, CSS, Sass, JavaScript, React, consumo de APIs REST, layout responsivo, Git e GitHub, Figma (básico), inglês intermediário',
+      motivo: 'Coloca na lista duas coisas que você já fez nos projetos e no estágio e que a vaga pede.',
     },
   ],
   carta: `Olá, equipe de recrutamento da Lumina Tecnologia,
 
-Quero me candidatar à vaga de Desenvolvedora Front-end Júnior. Há um ano faço estágio em desenvolvimento web na Agência Pixel Norte, onde ajudei a migrar o site institucional para React e passei a cuidar do layout das páginas em celulares e tablets.
+Quero me candidatar à vaga de Desenvolvedora Front-end Júnior. Estou no último semestre de Análise e Desenvolvimento de Sistemas e há um ano faço estágio em desenvolvimento web na Agência Pixel Norte, onde desenvolvi páginas de campanhas em HTML, CSS e JavaScript e ajudei a migrar o site institucional para React.
 
-Gosto especialmente da parte em que design e código se encontram. Participo das conversas com o time de design para entender os protótipos no Figma e transformar cada tela em uma interface fiel e fácil de usar, que é o que vocês buscam para o app de pagamentos.
+No estágio também corrigi problemas de layout em celulares e tablets e participo das reuniões com o time de design para entender os protótipos no Figma. É esse trabalho perto do design que a vaga descreve para o app de pagamentos.
 
-Também já integrei uma API REST no projeto Clima Agora e estou aprofundando TypeScript, aplicando a linguagem nos meus projetos pessoais. Fico animada com a ideia de ajudar pequenos negócios a receber pagamentos com mais facilidade.
+Fora do estágio, fiz o Clima Agora, que usa a API pública do OpenWeather, e uma lista de tarefas em React com filtros e dados salvos no navegador.
 
-Obrigada pela atenção. Vou gostar muito de conversar sobre como posso contribuir com o time.
+Obrigada pela atenção. Vou gostar de conversar sobre a vaga.
 
 Ana Ribeiro`,
 };
