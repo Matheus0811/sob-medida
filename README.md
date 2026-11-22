@@ -10,6 +10,14 @@ Assistente com IA que compara seu currículo com uma vaga de emprego. Você envi
 
 **Teste online:** https://sob-medida-matheus.vercel.app (tem um exemplo pronto que não precisa de currículo)
 
+## Telas
+
+![Página inicial: envio do currículo e da vaga](docs/screenshots/inicio.png)
+
+| Resultado da análise | Sugestões para o currículo |
+| --- | --- |
+| ![Nota de compatibilidade, pontos fortes e lacunas](docs/screenshots/resultado.png) | ![Sugestões de reescrita sem inventar fatos](docs/screenshots/sugestoes.png) |
+
 ## Tecnologias
 
 | Parte | Tecnologia |
@@ -95,4 +103,4 @@ Os testes cobrem o formato da análise, a normalização, a troca de modelo quan
 ## Autor
 
 Feito por **Matheus Galvão**, estudante de Análise e Desenvolvimento de Sistemas.
-[LinkedIn](https://www.linkedin.com/in/matheus-galv%C3%A3o-460612292) · [GitHub](https://github.com/Matheus0811)
+[LinkedIn](https://www.linkedin.com/in/matheus-galvao) · [GitHub](https://github.com/Matheus0811)
