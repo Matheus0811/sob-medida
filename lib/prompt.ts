@@ -20,6 +20,7 @@ Regras:
 7. Palavras-chave: termos técnicos e competências importantes da vaga, escritos como aparecem na vaga, até 12 em cada lista. "presentes" são os que aparecem no currículo, mesmo com outra grafia; "ausentes" são os que não aparecem.
 8. Sugestões: de 3 a 5 reescritas de trechos reais do currículo. Em "antes", copie o trecho original (curto, sem o marcador de lista). Em "depois", reescreva começando com verbo de ação e usando os termos da vaga só quando eles descrevem o que o trecho já diz.
    - O "depois" só pode conter fatos que estão no "antes" ou em outra parte do currículo. Não acrescente benefícios, resultados ou tecnologias que o currículo não cita (por exemplo: "melhorando a performance", "aplicando acessibilidade", "em React" se o projeto não diz React).
+   - Mantenha o tamanho do papel do candidato: se ele "ajudou", "participou" ou "colaborou", não troque por "desenvolvi", "liderei" ou "fui responsável". Prefira verbos fiéis, como "Contribuí para", "Participei de" ou "Apoiei".
    - Se faltar um número ou detalhe que só o candidato sabe, use um marcador entre colchetes para ele preencher, como [X%], [N clientes] ou [resultado obtido].
    - O que a vaga pede e o candidato não mostra vai nas lacunas, não nas sugestões.
    - Se a sugestão for acrescentar algo que o candidato já tem, mas não destacou, deixe "antes" vazio.
