@@ -70,6 +70,34 @@ describe('chamada à IA', () => {
     expect(result.model).toBe('b');
   });
 
+  it('espera e tenta de novo quando o Google está sobrecarregado', async () => {
+    const generate = vi
+      .fn<Generate>()
+      .mockRejectedValueOnce(apiError(503, 'This model is currently experiencing high demand.'))
+      .mockRejectedValueOnce(apiError(503, 'This model is currently experiencing high demand.'))
+      .mockResolvedValueOnce(valid);
+    const result = await analyzeResume(resume, job, { generate, models: ['a', 'b'], retryDelayMs: 0 });
+    expect(result.model).toBe('a');
+    expect(generate.mock.calls.map(([request]) => request.model)).toEqual(['a', 'b', 'a']);
+  });
+
+  it('desiste depois da segunda rodada se o Google continuar sobrecarregado', async () => {
+    const generate = vi.fn<Generate>().mockRejectedValue(apiError(503, 'high demand'));
+    await expect(
+      analyzeResume(resume, job, { generate, models: ['a', 'b'], retryDelayMs: 0 }),
+    ).rejects.toMatchObject({ code: 'UNAVAILABLE' });
+    expect(generate).toHaveBeenCalledTimes(4);
+  });
+
+  it('não repete modelo que estourou o tempo', async () => {
+    const timeout = Object.assign(new Error('Request timed out'), { name: 'TimeoutError' });
+    const generate = vi.fn<Generate>().mockRejectedValue(timeout);
+    await expect(analyzeResume(resume, job, { generate, models: ['a'], retryDelayMs: 0 })).rejects.toMatchObject({
+      code: 'UNAVAILABLE',
+    });
+    expect(generate).toHaveBeenCalledTimes(1);
+  });
+
   it('não insiste em erros que não são de cota ou disponibilidade', async () => {
     const generate = vi.fn<Generate>().mockRejectedValue(apiError(400, 'pedido inválido'));
     await expect(analyzeResume(resume, job, { generate, models: ['a', 'b'] })).rejects.toBeInstanceOf(AnalysisError);
